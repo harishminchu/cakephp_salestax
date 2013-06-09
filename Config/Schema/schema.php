@@ -19,6 +19,7 @@ class CakephpSalestaxSchema extends CakeSchema {
 	);
 
 	public $order_products = array(
+		'id' => array('type' => 'integer', 'null' => false, 'length' => 11, 'key' => 'primary'),
 		'order_id' => array('type' => 'integer', 'null' => true),
 		'product_id' => array('type' => 'integer', 'null' => true),
 		'quantity' => array('type' => 'text', 'null' => true),
@@ -32,6 +33,7 @@ class CakephpSalestaxSchema extends CakeSchema {
 
 	public $orders = array(
 		'id' => array('type' => 'integer', 'null' => false, 'length' => 11, 'key' => 'primary'),
+		'created' => array('type' => 'date', 'null' => true),
 		'indexes' => array(
 			
 		),

@@ -12,6 +12,7 @@ class OrderFixture extends CakeTestFixture {
  */
 	public $fields = array(
 		'id' => array('type' => 'integer', 'null' => false, 'length' => 11, 'key' => 'primary'),
+		'created' => array('type' => 'date', 'null' => false),
 		'indexes' => array(
 			
 		),
@@ -26,6 +27,7 @@ class OrderFixture extends CakeTestFixture {
 	public $records = array(
 		array(
 			'id' => 1
+		, 'created' => '2013-01-01'
 		),
 	);
 

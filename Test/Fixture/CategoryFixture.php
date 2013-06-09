@@ -4,8 +4,6 @@
  *
  */
 class CategoryFixture extends CakeTestFixture {
-	public $import = 'Category';
-
 /**
  * Fields
  *
@@ -15,6 +13,7 @@ class CategoryFixture extends CakeTestFixture {
 		'id' => array('type' => 'integer', 'null' => false, 'length' => 11, 'key' => 'primary'),
 		'name' => array('type' => 'text', 'null' => true),
 		'taxable' => array('type' => 'integer', 'null' => true),
+		'created' => array('type' => 'date', 'null' => true),
 		'indexes' => array(
 			
 		),

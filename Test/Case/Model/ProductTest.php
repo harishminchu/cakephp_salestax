@@ -16,7 +16,7 @@ class ProductTest extends CakeTestCase {
 		'app.product',
 		'app.category',
 		'app.order',
-		'app.order_product'
+		'app.order_product',
 	);
 
 /**
