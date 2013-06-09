@@ -14,8 +14,9 @@ class OrderTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.order',
-		'app.order_product',
-		'app.product'
+		'app.product',
+		'app.category',
+		'app.order_product'
 	);
 
 /**

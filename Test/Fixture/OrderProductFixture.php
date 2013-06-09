@@ -4,7 +4,6 @@
  *
  */
 class OrderProductFixture extends CakeTestFixture {
-
 /**
  * Fields
  *
