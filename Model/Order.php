@@ -33,4 +33,8 @@ class Order extends AppModel {
 		)
 	);
 
+
+	public function receipt($id = null){
+		return '';
+	}
 }
