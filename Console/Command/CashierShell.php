@@ -15,6 +15,13 @@ class CashierShell extends AppShell {
 		$this->Order = ClassRegistry::init('Order');
 		$this->Order->OrderProduct = ClassRegistry::init('OrderProduct');
 		$products = $this->Product->find('all');
+		$product_ids = array();
+		$listing = '';
+		foreach($products as &$product){
+			$product_ids[] = $product['Product']['id'];
+			$pretty_price = number_format($product['Product']['price'], 2);
+			$listing .= sprintf("[%d]. %s (%s)", $product['Product']['id'], $product['Product']['name'], $pretty_price) . "\n";
+		}
 		$order_products = array();
 		while($this->run){
 			$quantity = $this->in('Qty (0 to complete order; empty order = quit):', null, 0);
@@ -39,12 +46,7 @@ class CashierShell extends AppShell {
 				continue;
 			}
 			$this->out('-- Available products --');
-			$product_ids = array();
-			foreach ($products as $i => &$product) {
-				$pretty_price = number_format($product['Product']['price'], 2);
-				$this->out(sprintf("[%d]. %s (%s)", $product['Product']['id'], $product['Product']['name'], $pretty_price));
-				$product_ids[] = $product['Product']['id'];
-			}
+			$this->out($listing);
 			$product_id = $this->in('Product:', $product_ids);
 			$product = $this->Product->findById($product_id);
 			$default_price = $product['Product']['price'];
