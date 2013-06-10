@@ -156,6 +156,23 @@ cp cakephp_salestax.sqlite3.prefilled cakephp_salestax.sqlite3
 ./Console/cake cashier
 ```
 
+App Mini Manual
+---------------
+When the "CashierShell" app is started, it is essentially an infinite loop
+of orders.
+
+The user is prompted for 3 inputs, in order:
+- quantity (default 0, quits)
+- product_id (no default)
+- price (default price of the product)
+
+At the prompt, the user may immediately press ENTER to use the default
+value that was provided in [square brackets].
+
+If an invalid input was provided, the user will need to retry until a valid
+value has been input.
+
+
 License
 -------
 MIT
