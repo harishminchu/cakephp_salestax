@@ -23,7 +23,15 @@ class CashierShell extends AppShell {
 		}
 		$order_products = array();
 		while($this->run){
-			$quantity = $this->in('Qty (0 to complete order; empty order = quit):', null, 0);
+			while(true) {
+				$quantity = $this->in('Qty (0 to complete order; empty order = quit):', null, 0);
+				if(!is_numeric($quantity)){
+					$this->out('<warning>Quantity must be numeric. Try again.</warning>');
+				}
+				else {
+					break;
+				}
+			}
 			if($quantity == 0){
 				if(count($order_products) == 0){
 					$this->run = false;
@@ -46,10 +54,26 @@ class CashierShell extends AppShell {
 			}
 			$this->out('-- Available products --');
 			$this->out($listing);
-			$product_id = $this->in('Product:', $product_ids);
+			while(true){
+				$product_id = $this->in('Product:');
+				if(!in_array($product_id, $product_ids)){
+					$this->out('<warning>Invalid product. Try again.</warning>');
+				}
+				else {
+					break;
+				}
+			}
 			$product = $this->Product->findById($product_id);
 			$default_price = $product['Product']['price'];
-			$price = $this->in("Price ({$product['Product']['name']}):", null, $default_price);
+			while(true) {
+				$price = $this->in("Price ({$product['Product']['name']}):", null, $default_price);
+				if(!is_numeric($price)){
+					$this->out('<warning>Price must be numeric. Try again.</warning>');
+				}
+				else {
+					break;
+				}
+			}
 			$this->hr();
 			$this->out("{$quantity} {$product['Product']['name']} at {$price}");
 			$this->hr();
