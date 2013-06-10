@@ -40,42 +40,42 @@ to the "sales tax problem":
 > INPUT:
 > ------
 > __Input 1__:
-> 1 book at 12.49
-> 1 music CD at 14.99
-> 1 chocolate bar at 0.85
+> - 1 book at 12.49
+> - 1 music CD at 14.99
+> - 1 chocolate bar at 0.85
 >
 > __Input 2__:
-> 1 imported box of chocolates at 10.00
-> 1 imported bottle of perfume at 47.50
+> - 1 imported box of chocolates at 10.00
+> - 1 imported bottle of perfume at 47.50
 >
 > __Input 3__:
-> 1 imported bottle of perfume at 27.99
-> 1 bottle of perfume at 18.99
-> 1 packet of headache pills at 9.75
-> 1 box of imported chocolates at 11.25
+> - 1 imported bottle of perfume at 27.99
+> - 1 bottle of perfume at 18.99
+> - 1 packet of headache pills at 9.75
+> - 1 box of imported chocolates at 11.25
 > 
 > OUTPUT
 > ------ 
 > __Output 1__:
-> 1 book: 12.49
-> 1 music CD: 16.49
-> 1 chocolate bar: 0.85
-> Sales Taxes: 1.50
-> Total: 29.83
+> - 1 book: 12.49
+> - 1 music CD: 16.49
+> - 1 chocolate bar: 0.85
+> - Sales Taxes: 1.50
+> - Total: 29.83
 >  
 > __Output 2__:
-> 1 imported box of chocolates: 10.50
-> 1 imported bottle of perfume: 54.65
-> Sales Taxes: 7.65
-> Total: 65.15
+> - 1 imported box of chocolates: 10.50
+> - 1 imported bottle of perfume: 54.65
+> - Sales Taxes: 7.65
+> - Total: 65.15
 >  
 > __Output 3__:
-> 1 imported bottle of perfume: 32.19
-> 1 bottle of perfume: 20.89
-> 1 packet of headache pills: 9.75
-> 1 imported box of chocolates: 11.85
-> Sales Taxes: 6.70
-> Total: 74.68
+> - 1 imported bottle of perfume: 32.19
+> - 1 bottle of perfume: 20.89
+> - 1 packet of headache pills: 9.75
+> - 1 imported box of chocolates: 11.85
+> - Sales Taxes: 6.70
+> - Total: 74.68
 
 Assumptions
 -----------
@@ -142,7 +142,8 @@ _Quickstart notes_:
 > providing a schema and the 7 products featured.
 
 Here are a few lines that can be bashed into the terminal to get the app
-installed and executable.
+installed and executable. It is assumed you'll starting with a "fresh install"
+environment of TurnKeyLinux 12.0
 
 ```sh
 apt-get update
@@ -153,8 +154,26 @@ git checkout -b 2.3 2.3.5
 git clone https://github.com/starlocke/cakephp_salestax.git
 cd cakephp_salestax
 cp cakephp_salestax.sqlite3.prefilled cakephp_salestax.sqlite3
+```
+
+App Launch
+----------
+Once installed, this command will run the CashierShell app:
+
+```sh
 ./Console/cake cashier
 ```
+
+Unit Testing
+------------
+Once installed, this command will run the unit test for Orders:
+
+```sh
+./Console/cake test app Model/Order
+```
+
+No other unit tests were made for this small excercise.
+
 
 App Mini Manual
 ---------------
