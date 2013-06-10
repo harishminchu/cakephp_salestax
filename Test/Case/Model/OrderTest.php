@@ -27,7 +27,6 @@ class OrderTest extends CakeTestCase {
 	public function setUp() {
 		parent::setUp();
 		$this->Order = ClassRegistry::init('Order');
-		$this->Order->OrderProduct = ClassRegistry::init('OrderProduct');
 	}
 
 	public function testOrderOne(){
