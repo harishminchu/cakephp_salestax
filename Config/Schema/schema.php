@@ -24,7 +24,8 @@ class CakephpSalestaxSchema extends CakeSchema {
 		'product_id' => array('type' => 'integer', 'null' => true),
 		'quantity' => array('type' => 'text', 'null' => true),
 		'price' => array('type' => 'text', 'null' => true),
-		'taxes' => array('type' => 'text', 'null' => true),
+		'sales_tax' => array('type' => 'text', 'null' => true),
+		'import_tax' => array('type' => 'text', 'null' => true),
 		'indexes' => array(
 			
 		),
