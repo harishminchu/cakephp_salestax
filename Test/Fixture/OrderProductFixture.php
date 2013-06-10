@@ -15,7 +15,8 @@ class OrderProductFixture extends CakeTestFixture {
 		'product_id' => array('type' => 'integer', 'null' => true),
 		'quantity' => array('type' => 'float', 'null' => true),
 		'price' => array('type' => 'float', 'null' => true),
-		'taxes' => array('type' => 'float', 'null' => true),
+		'sales_tax' => array('type' => 'float', 'null' => true),
+		'import_tax' => array('type' => 'float', 'null' => true),
 		'indexes' => array(
 			
 		),
@@ -33,7 +34,8 @@ class OrderProductFixture extends CakeTestFixture {
 			'product_id' => 1,
 			'quantity' => 1,
 			'price' => 1.00,
-			'taxes' => 0.10
+			'sales_tax' => 0.10,
+			'import_tax' => 0.05
 		),
 	);
 

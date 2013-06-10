@@ -65,7 +65,7 @@ class ProductFixture extends CakeTestFixture {
 		),
 		array(
 			'id' => 6,
-			'name' => 'music cd',
+			'name' => 'music CD',
 			'price' => 14.99,
 			'imported' => 0,
 			'category_id' => 4
