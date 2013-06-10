@@ -51,6 +51,11 @@ class CategoryFixture extends CakeTestFixture {
 			'name' => 'beauty products',
 			'taxable' => 1
 		),
+		array(
+			'id' => 6,
+			'name' => 'misc',
+			'taxable' => 1
+		),
 
 	);
 

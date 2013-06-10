@@ -10,6 +10,7 @@ class OrderProduct extends AppModel {
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 	const SALES_TAX = 0.1;
 	const IMPORT_TAX = 0.05;
+	const TAX_ROUND_UP = 0.05;
 
 /**
  * belongsTo associations
@@ -46,14 +47,22 @@ class OrderProduct extends AppModel {
 		}
 		$sales_tax = 0;
 		$import_tax = 0;
+		$combined_tax_rates = 0;
 		if($product['Category']['taxable'] == 1){
-			$sales_tax = $base * self::SALES_TAX;
+			$sales_tax = $this->tax($base, self::SALES_TAX);
 		}
 		if($product['Product']['imported'] == 1){
-			$import_tax = $base * self::IMPORT_TAX;
+			$import_tax = $this->tax($base, self::IMPORT_TAX);
 		}
 		$this->data['OrderProduct']['sales_tax'] = round($sales_tax, 4);
 		$this->data['OrderProduct']['import_tax'] = round($import_tax, 4);
 		return true;
+	}
+
+	public function tax($base, $rate){
+		$coefficient = 1 / self::TAX_ROUND_UP;
+		$base_tax = $base * $rate;
+		$tax = ceil($coefficient * $base_tax) / $coefficient;
+		return $tax;
 	}
 }

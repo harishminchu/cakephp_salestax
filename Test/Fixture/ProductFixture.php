@@ -51,10 +51,10 @@ class ProductFixture extends CakeTestFixture {
 		),
 		array(
 			'id' => 4,
-			'name' => 'box of imported chocolates',
-			'price' => 11.25,
-			'imported' => 1,
-			'category_id' => 2
+			'name' => 'widget',
+			'price' => 0.33,
+			'imported' => 0,
+			'category_id' => 6
 		),
 		array(
 			'id' => 5,

@@ -80,7 +80,7 @@ EOT;
 		$this->Order->OrderProduct->create();
 		$this->Order->OrderProduct->save(array('order_id'=>$order_id, 'product_id' => 5, 'quantity' => 1)); // packet of headache pills
 		$this->Order->OrderProduct->create();
-		$this->Order->OrderProduct->save(array('order_id'=>$order_id, 'product_id' => 4, 'quantity' => 1)); // box of imported chocolates
+		$this->Order->OrderProduct->save(array('order_id'=>$order_id, 'product_id' => 3, 'quantity' => 1, 'price' => 11.25)); // box of imported chocolates
 		$receipt = $this->Order->receipt();
 		$expected = <<<EOT
 1 imported bottle of perfume: 32.19
