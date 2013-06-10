@@ -13,7 +13,6 @@ class CashierShell extends AppShell {
 		$this->hr();
 		$this->Product = ClassRegistry::init('Product');
 		$this->Order = ClassRegistry::init('Order');
-		$this->Order->OrderProduct = ClassRegistry::init('OrderProduct');
 		$products = $this->Product->find('all');
 		$product_ids = array();
 		$listing = '';

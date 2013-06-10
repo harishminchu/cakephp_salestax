@@ -32,6 +32,10 @@ class Order extends AppModel {
 		)
 	);
 
+	public $hasMany = array(
+		'OrderProduct'
+	);
+
 
 	public function receipt($id = null){
 		$order_id = isset($id) ? $id : $this->id;

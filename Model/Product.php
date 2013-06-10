@@ -43,7 +43,7 @@ class Product extends AppModel {
 			'className' => 'Order',
 			'joinTable' => 'order_products',
 			'foreignKey' => 'product_id',
-			'associationForeignKey' => 'product_id',
+			'associationForeignKey' => 'order_id',
 			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',
@@ -55,5 +55,8 @@ class Product extends AppModel {
 			'insertQuery' => ''
 		)
 	);
-
+	
+	public $hasMany = array(
+		'OrderProduct'
+	);
 }
